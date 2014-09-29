@@ -32,7 +32,8 @@ def getSettings():
 		},
 		"appearance": {
 			"name": s.get(["appearance", "name"]),
-			"color": s.get(["appearance", "color"])
+			"color": s.get(["appearance", "color"]),
+			"theme": s.get(["appearance", "theme"])
 		},
 		"printer": {
 			"movementSpeedX": movementSpeedX,
@@ -112,6 +113,7 @@ def setSettings():
 
 		if "appearance" in data.keys():
 			if "name" in data["appearance"].keys(): s.set(["appearance", "name"], data["appearance"]["name"])
+			if "theme" in data["appearance"].keys(): s.set(["appearance", "theme"], data["appearance"]["theme"])
 			if "color" in data["appearance"].keys(): s.set(["appearance", "color"], data["appearance"]["color"])
 
 		if "printer" in data.keys():

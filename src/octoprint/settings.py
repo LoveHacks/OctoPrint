@@ -105,7 +105,8 @@ default_settings = {
 	},
 	"appearance": {
 		"name": "",
-		"color": "default"
+		"color": "default",
+        "theme" : "default"
 	},
 	"controls": [],
 	"system": {

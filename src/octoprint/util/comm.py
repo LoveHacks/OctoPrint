@@ -49,7 +49,7 @@ def serialList():
 			   + glob.glob("/dev/tty.usb*") \
 			   + glob.glob("/dev/cu.*") \
 			   + glob.glob("/dev/cuaU*") \
-			   + glob.glob("/dev/rfcomm*")
+			   + glob.glob("/dev/rfcomm*") \
 			   + glob.glob("/dev/ttymxc*")
 
 	additionalPorts = settings().get(["serial", "additionalPorts"])

@@ -65,7 +65,8 @@ def index():
 		display_version=DISPLAY_VERSION,
 		stylesheet=settings().get(["devel", "stylesheet"]),
 		gcodeMobileThreshold=settings().get(["gcodeViewer", "mobileSizeThreshold"]),
-		gcodeThreshold=settings().get(["gcodeViewer", "sizeThreshold"])
+		gcodeThreshold=settings().get(["gcodeViewer", "sizeThreshold"]),
+		theme = settings().get(['appearance', 'theme'])
 	)
 
 
@@ -105,7 +106,7 @@ class Server():
 		self._debug = debug
 		self._allowRoot = allowRoot
 
-		  
+
 	def run(self):
 		if not self._allowRoot:
 			self._checkForRoot()

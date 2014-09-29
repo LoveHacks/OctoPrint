@@ -9,8 +9,10 @@ function SettingsViewModel(loginStateViewModel, usersViewModel) {
 
     self.appearance_name = ko.observable(undefined);
     self.appearance_color = ko.observable(undefined);
+    self.appearance_theme = ko.observable(undefined);
 
     self.appearance_available_colors = ko.observable(["default", "red", "orange", "yellow", "green", "blue", "violet", "black"]);
+    self.appearance_available_themes = ko.observable(["default", "minimal"]);
 
     self.printer_movementSpeedX = ko.observable(undefined);
     self.printer_movementSpeedY = ko.observable(undefined);
@@ -185,6 +187,7 @@ function SettingsViewModel(loginStateViewModel, usersViewModel) {
 
         self.appearance_name(response.appearance.name);
         self.appearance_color(response.appearance.color);
+        self.appearance_theme(response.appearance.theme);
 
         self.printer_movementSpeedX(response.printer.movementSpeedX);
         self.printer_movementSpeedY(response.printer.movementSpeedY);
@@ -248,7 +251,8 @@ function SettingsViewModel(loginStateViewModel, usersViewModel) {
             },
             "appearance" : {
                 "name": self.appearance_name(),
-                "color": self.appearance_color()
+                "color": self.appearance_color(),
+                "theme": self.appearance_theme()
             },
             "printer": {
                 "movementSpeedX": self.printer_movementSpeedX(),

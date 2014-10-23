@@ -207,6 +207,12 @@ class MachineCom(object):
 				self._sdFileList = False
 				self._sdFiles = []
 				self._callback.mcSdFiles([])
+		elif newState == self.STATE_CLOSED_WITH_ERROR:
+			if settings().getBoolean(["serial", "autoreconnect"]):
+				(port, baudrate) = settings().get(["serial", "port"]), settings().getInt(["serial", "baudrate"])
+				connectionOptions = self._callback.getConnectionOptions()
+				if port in connectionOptions["ports"]:
+					self._callback.connect(port, baudrate)
 
 		oldState = self.getStateString()
 		self._state = newState

@@ -70,6 +70,7 @@ def getSettings():
 			"portOptions": connectionOptions["ports"],
 			"baudrateOptions": connectionOptions["baudrates"],
 			"autoconnect": s.getBoolean(["serial", "autoconnect"]),
+			"autoreconnect": s.getBoolean(["serial", "autoreconnect"]),
 			"timeoutConnection": s.getFloat(["serial", "timeout", "connection"]),
 			"timeoutDetection": s.getFloat(["serial", "timeout", "detection"]),
 			"timeoutCommunication": s.getFloat(["serial", "timeout", "communication"]),

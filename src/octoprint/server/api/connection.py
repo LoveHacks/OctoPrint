@@ -26,7 +26,7 @@ def connectionState():
 @restricted_access
 def connectionCommand():
 	valid_commands = {
-		"connect": ["autoconnect"],
+		"connect": ["autoconnect", "autoreconnect"],
 		"disconnect": []
 	}
 
@@ -52,6 +52,8 @@ def connectionCommand():
 			settings().setInt(["serial", "baudrate"], baudrate)
 		if "autoconnect" in data.keys():
 			settings().setBoolean(["serial", "autoconnect"], data["autoconnect"])
+		if "autoreconnect" in data.keys():
+			settings().setBoolean(["serial", "autoreconnect"], data["autoreconnect"])
 		settings().save()
 		printer.connect(port=port, baudrate=baudrate)
 	elif command == "disconnect":
